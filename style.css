@@ -5,66 +5,102 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+.main-container {
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    grid-template-rows: 20% 20% 20% 20% 20%;
+}
+
+#thumbnail-container {
+    padding: 10px;
+    width:fit-content;
+    min-width: 500px;
+    background-color: rgba(0, 0, 0);
+    border: 2px solid white;
+    position: absolute;
+    top:100px;
+    left: 40%;
+}
 
 .thumb-image {
     width: 70px;
     height: 50px;
     padding: 2px;
     cursor: pointer;
+    margin: 10px;
 }
 
-
-#thumbnail-container {
-    height: 60px;
-    width:fit-content;
-    display: flex;
-    position: absolute;
-    top: 5em;
-    left: 46vw;
-    justify-content: center;
-    align-items: center;
-    z-index: 100;
-    background-color: rgba(0, 0, 0, 0.459);
-    border: 2px solid black;
+.thumb-image:hover {
+    border: 1px solid rgb(149, 123, 123);
+    transition: transform 0.3s;
+    scale: 1.2;   
 }
+
 #pic-container {
-    width: 100vw;
-    height: 100vh;
-    
+    grid-area: 5 / 6 / 1 / 1;
 }
+
 #pic-container img {
-    width: 500px;
-    height: 500px;
+    width: 100%;
+    height: 100vh;
+    object-fit: fill;
+    overflow: hidden;
 }
-button {
-    padding: 2em;
+
+.thumb-btns {
+    padding: 10px;
     border-radius: 2em;
     cursor: pointer;
-    
-}
-
-#left-arrow {
-    position: absolute;
-    top: 6em;
-    left: 40vw;
-}
-#right-arrow {
-    position: absolute;
-    top: 6em;
-    right: 35vw;
+    z-index: 100;
 }
 
 footer {
     position: absolute;
     bottom: 5px;
     left: 5px;
+    color: aliceblue;
+}
+
+#right-arrow, #left-arrow {
+    position: absolute;
+    bottom: 25%;
+}
+
+#left-arrow {
+    position: absolute;
+    left:10px;
+}
+#right-arrow {
+    right: 10px;
 }
 
 
+@media (min-width: 320px ) {
 
-
-
-
+    #thumbnail-container {
+        left: 2.5%;
+        padding: 0;
+        min-width: 300px;
+    }
+    
+    #right-arrow {
+        right: -20px;
+        padding: 7px;
+    }
+    
+    #left-arrow {
+        padding: 7px;
+        left: -17px;
+    }
+    #pic-container img {
+        object-fit: scale-down;
+    }
+    body {
+        background-color: black;
+    }
+}
 
 
 
